@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+.TopBar {
+  margin-top: 30px;
+  height: 75px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TopBarInner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.TopBarUser {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TopBarUserImage {
+  width: 100%;
+  height: 100%; /* Ensure the image covers the full height of the container */
+  object-fit: cover; /* This makes the image cover the available space without stretching */
+  border-radius: 50%; /* Match the container's border-radius to maintain the circular shape */
 }
