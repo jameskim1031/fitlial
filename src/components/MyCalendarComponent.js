@@ -1,19 +1,25 @@
 import React from 'react';
 import Calendar from 'react-calendar';
+import { useNavigate } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css'; // Default styling
 
 function CalendarCard() {
+    const navigate = useNavigate();
     const handleDateClick = (value) => {
     // Handle the date click event
     console.log(value);
+    let statusValue = 4;
+    if (value.getDate() % 3 == 0) {
+      statusValue = 3;
+    } else if (value.getDate() % 4 == 0) {
+      statusValue = 2;
+    } else if (value.getDate() % 5 == 0) {
+      statusValue = 1;
+    }
+
+    navigate('/example', { state: { date: value, status: statusValue } });
     };
 
-    // const tileContent = ({ date, view }) => {
-    //     // Add content to specific date, for example, the 15th of any month
-    //     if (view === 'month' && date.getDate() === 15) {
-    //       return <p>🌟</p>; // Example: Adds a star emoji to the 15th of every month
-    //     }
-    //   };
 
     const tileClassName = ({ date, view }) => {
         // Initialize class name string

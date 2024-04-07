@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PushUp from "../images/pushup.jpeg";
 import WallSit from "../images/wallsit.jpeg";
 import Plank from "../images/plank.png";
@@ -7,6 +8,13 @@ import Squat from "../images/squat.jpeg";
 import CountdownTimer from './CountdownTimer';
 
 function TodayWorkout() {
+
+    const navigate = useNavigate();
+    const handleOnClick = () => {
+        // Handle the date click event
+        navigate('/today');
+    };
+
     return (
         <div className="TodayWorkoutCard">
             <div className="TodayWorkoutCardTop">
@@ -35,7 +43,7 @@ function TodayWorkout() {
                 </div>
             </div>
             <div className="TodayWorkoutCardBottom">
-                <button>Complete</button>
+                <button onClick={handleOnClick}>Complete</button>
                 <CountdownTimer />
             </div>
         </div>
