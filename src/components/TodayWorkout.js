@@ -3,6 +3,7 @@ import PushUp from "../images/pushup.jpeg";
 import WallSit from "../images/wallsit.jpeg";
 import Plank from "../images/plank.png";
 import SitUp from "../images/situp.avif";
+import Squat from "../images/squat.jpeg";
 import CountdownTimer from './CountdownTimer';
 
 function TodayWorkout() {
@@ -29,8 +30,8 @@ function TodayWorkout() {
                     <div className="TodayWorkoutCardMiddleItemName">Sit Up</div>
                 </div>
                 <div className="TodayWorkoutCardMiddleItem">
-                    <img className="TodayWorkoutCardMiddleItemImage" src={SitUp}/>
-                    <div className="TodayWorkoutCardMiddleItemName">Sit Up</div>
+                    <img className="TodayWorkoutCardMiddleItemImage" src={Squat}/>
+                    <div className="TodayWorkoutCardMiddleItemName">Squat</div>
                 </div>
             </div>
             <div className="TodayWorkoutCardBottom">

@@ -1,23 +1,24 @@
 import React from 'react';
 import Page from './Page';
-import TopBar from './TopBar';
-import TodayWorkout from './TodayWorkout';
-import WelcomeBar from './WelcomeBar';
+import WelcomeBarMain from './WelcomeBarMain';
+import CalendarTopBar from './CalendarTopBar';
 import NavBar from './NavBar';
-import WeeklyStreak from './WeeklyStreak';
+import MyCalendarComponent from './MyCalendarComponent';
+import FamilyGoals from './FamilyGoals';
 
 function CalendarCard() {
     return (
         <Page>
             <div className='MainCard'>
                 <div className="MainContent">
-                    <WelcomeBar />
-                    
+                    <CalendarTopBar />
+                    <MyCalendarComponent />
+                    <FamilyGoals />
                 </div>
                 <NavBar />
             </div>
         </Page>
     );
-}; 
+};
 
 export default CalendarCard;
