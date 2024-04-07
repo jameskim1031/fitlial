@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Page from './Page';
 import NavBar from './NavBar';
-import TodayWorkoutTop from './TodayWorkoutTop';
-import TodayWorkoutList from './TodayWorkoutList';
+import PastWorkoutTop from './PastWorkoutTop';
+import PastWorkoutList from './PastWorkoutList';
 import TodayWorkoutCarousel from './TodayWorkoutCarousel';
 
 
@@ -11,8 +11,8 @@ function Workout() {
     <Page>
         <div className='MainCard'>
             <div className="MainContent">
-                <TodayWorkoutTop />
-                <TodayWorkoutList />
+                <PastWorkoutTop />
+                <PastWorkoutList />
                 <TodayWorkoutCarousel />
             </div>
             <NavBar />

@@ -6,14 +6,16 @@ import Page from './components/Page';
 import TopBar from './components/TopBar';
 import Workout from './components/Workout';
 import CalendarCard from './components/CalendarCard';
+import ExampleWorkout from './components/ExampleWorkout';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/workout" element={<Workout />} />
+        <Route path="/today" element={<Workout />} />
         <Route path="/calendar" element={<CalendarCard />}/>
+        <Route path="/example" element={<ExampleWorkout />}/>
       </Routes>
     </BrowserRouter>
   );

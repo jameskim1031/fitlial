@@ -195,7 +195,7 @@
   transition: background-color 0.3s;
 }
 
-.navItem:hover, .navItem.active {
+.navItem:hover {
   background-color: rgba(0,0,0,0.1); 
 }
 
@@ -260,10 +260,120 @@ h1 {
   text-align: center;
 }
 
+/* Calendar */
+.react-calendar {
+  transform: scale(0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Example box shadow */
+  /* Additional styling to ensure the shadow is visible */
+  border-radius: 10px; /* Optional: Rounds the corners for a smoother look */
+  border: none !important;
+}
+
+.react-calendar__navigation button {
+  font-size: 1em;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e0e0e0; /* Light grey background on hover/focus */
+}
+
+.react-calendar__tile {
+  border-radius: 5px !important;
+}
+
+/* Active day */
+.react-calendar__tile--active {
+  background-color: inherit !important; /* Makes the active day's background the same as the calendar's */
+  color: inherit !important; /* Ensures the text color also matches the non-active days */
+}
+
+.react-calendar__tile--now {
+  background-color: #fcfbfb !important; /* A subtle light grey background */
+  color: #333 !important; /* A darker text color for contrast */
+  font-weight: bold !important; /* Optionally make the text bold */
+}
+
+.pastDateCircle {
+  background-color: #4CAF50 !important; /* A modern, crisp green */
+}
+
+.pastDateCircleTriple {
+  background-color: #CDDC39 !important; /* A muted, lime green, moving towards yellow */
+}
+
+.pastDateCircleQuarter {
+  background-color: #FFEB3B !important; /* A vibrant but not overly bright yellow */
+}
+
+.pastDateCircleFifth {
+  background-color: #FFC107 !important; /* A warm amber, as a softer approach to red */
+}
+
+/* Family Goals */
+.FamilyGoalsCard {
+  padding-top: 5px;
+  margin-top:15px;
+  width: 290px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.FamilyGoalsCardTop {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.FamilyGoalsCardTop > h1 {
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+}
+
+
+.FamilyGoalsCardBottom {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.FamilyGoalsCardBottomItem {
+  border-top: 1px solid rgb(206, 206, 208);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.FamilyGoalsCardBottomItem > p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+/* Today Workout List */
 .WorkoutBox {
   height: 400px;
-  outline: 2px solid black;
+  width: 270px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
+
+.WorkoutExercise {
+  border: 1px solid red;
+}
+
+/* 
+
 
 .WorkoutExercise {
   width: 100%;
@@ -271,7 +381,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 .WorkoutExercise p, .WorkoutExercise button {
   font-weight: bold;
@@ -307,3 +417,196 @@ h1 {
   padding: 0px;
 }
 
+/* TodayWorkoutList */
+.TodayWorkoutList {
+  height: 150px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-x: auto;
+}
+
+.TodayWorkoutListItem,
+.TodayWorkoutListItemSubmit{
+  min-width: 150px; /* or any other value that ensures they're wide enough */
+  height: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 10px; /* Add some spacing between items */
+}
+
+.TodayWorkoutListItemSubmitButton {
+  margin-top:60px;
+  margin-left: 40px;
+  background-color: #4fba5b; /* Light grey background */
+  color: #ffffff; /* Dark grey text */
+  border: none; /* Light grey border */
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px; /* Slightly rounded corners for a softer look */
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.TodayWorkoutListItem:last-child {
+  margin-right: 0;
+}
+
+.TodayWorkoutListItemTop {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  border-bottom: 1px solid #a09b9b;
+}
+
+.TodayWorkoutListItemTop > h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+.TodayWorkoutListItemBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TodayWorkoutListItemBottomVideoContainer {
+  margin-top: 15px;
+  width: 80px;
+  height: 60px;
+}
+
+.TodayWorkoutListItemBottomButton{
+  margin-top: 15px;
+}
+
+/* Today Workout Carousel */
+.TodayWorkoutCarousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  height: 350px;
+  width: 350px;
+  overflow-y: auto;
+}
+
+.TodayWorkoutCarouselItem {
+  margin-top: 15px;
+  width: 330px;
+  min-height: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.TodayWorkoutCarouselItemTop {
+  display: flex;
+  margin-top: 10px;
+}
+
+.TodayWorkoutCarouselItemTop > h3 {
+  margin:0;
+  margin-left: 10px;
+}
+
+.TodayWorkoutCarouselItemBottom {
+  padding: 10px;
+  height: 300px;
+}
+
+.TodayWorkoutCarouselItemReaction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.TodayWorkoutCarouselItemReactionIcons {
+  margin-left: 10px;
+}
+
+.comment-form {
+  display: flex;
+  padding-top: 8px;
+  margin-left: 10px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+  width: 180px;
+}
+
+.comment-submit {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.comment-submit:hover {
+  opacity: 0.9;
+}
+
+.PastWorkoutList {
+  height: 150px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.PastWorkoutListTop > h2 {
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+}
+
+.PastWorkoutListBottom {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.PastWorkoutListBottomItem {
+  border: 1px solid green;
+  width: 80px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PastWorkoutListBottomItemName {
+  margin-top: 5px;
+}
+
+.PastWorkoutListBottomItemName > h3 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}

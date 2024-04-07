@@ -2,7 +2,7 @@ import React from 'react';
 import Page from './Page';
 import TopBar from './TopBar';
 import TodayWorkout from './TodayWorkout';
-import WelcomeBar from './WelcomeBar';
+import WelcomeBar from './WelcomeBarMain';
 import NavBar from './NavBar';
 import WeeklyStreak from './WeeklyStreak';
 
