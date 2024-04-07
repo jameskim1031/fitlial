@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import VideoUploader from './VideoUploader';
 
 function TodayWorkoutList() {
     return (
@@ -13,7 +14,8 @@ function TodayWorkoutList() {
                             <source src="movie.mp4" type="video/mp4"></source>
                         </video>
                     </div>
-                    <button className='TodayWorkoutListItemBottomButton'>Upload</button>
+                    <VideoUploader />
+                    {/* <button className='TodayWorkoutListItemBottomButton'>Upload</button> */}
                 </div>
             </div>
             <div className='TodayWorkoutListItem'>
@@ -26,7 +28,8 @@ function TodayWorkoutList() {
                             <source src="movie.mp4" type="video/mp4"></source>
                         </video>
                     </div>
-                    <button className='TodayWorkoutListItemBottomButton'>Upload</button>
+                    <VideoUploader />
+                    {/* <button className='TodayWorkoutListItemBottomButton'>Upload</button> */}
                 </div>
             </div>
             <div className='TodayWorkoutListItem'>
@@ -39,7 +42,8 @@ function TodayWorkoutList() {
                             <source src="movie.mp4" type="video/mp4"></source>
                         </video>
                     </div>
-                    <button className='TodayWorkoutListItemBottomButton'>Upload</button>
+                    <VideoUploader />
+                    {/* <button className='TodayWorkoutListItemBottomButton'>Upload</button> */}
                 </div>
             </div>
             <div className='TodayWorkoutListItem'>
@@ -52,7 +56,8 @@ function TodayWorkoutList() {
                             <source src="movie.mp4" type="video/mp4"></source>
                         </video>
                     </div>
-                    <button className='TodayWorkoutListItemBottomButton'>Upload</button>
+                    <VideoUploader />
+                    {/* <button className='TodayWorkoutListItemBottomButton'>Upload</button> */}
                 </div>
             </div>
             <div className='TodayWorkoutListItem'>
@@ -65,7 +70,8 @@ function TodayWorkoutList() {
                             <source src="movie.mp4" type="video/mp4"></source>
                         </video>
                     </div>
-                    <button className='TodayWorkoutListItemBottomButton'>Upload</button>
+                    <VideoUploader />
+                    {/* <button className='TodayWorkoutListItemBottomButton'>Upload</button> */}
                 </div>
             </div>
             <div className='TodayWorkoutListItemSubmit'>
