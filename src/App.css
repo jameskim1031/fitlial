@@ -1,27 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.MainCard {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+}
+
+.MainContent {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .TopBar {
-  margin-top: 30px;
-  height: 75px;
+  margin-top: 10px;
+  padding: 7px;
+  height: 50px;
+  width: 255px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
 }
 
 .TopBarInner {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-left: 25px;
-  margin-right: 25px;
   height: 100%;
 }
 
-.TopBarUser {
-  width: 50px;
-  height: 50px;
+.TopBarUserIncompleted,
+.TopBarUserCompleted {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  margin: 0 10px;
+}
+
+.TopBarUserIncompleted {
+  border: 3px solid rgb(232, 236, 151);
+}
+
+.TopBarUserCompleted {
+  border: 3px solid rgb(106, 237, 169);
 }
 
 .TopBarUserImage {
   width: 100%;
-  height: 100%; /* Ensure the image covers the full height of the container */
-  object-fit: cover; /* This makes the image cover the available space without stretching */
-  border-radius: 50%; /* Match the container's border-radius to maintain the circular shape */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/*  */
+.TodayWorkoutCard {
+  margin-top: 17px;
+  padding-top: 5px;
+  width: 270px;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.TodayWorkoutCardTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+
+.TodayWorkoutCardTop > h1 {
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.TodayWorkoutCardMiddle {
+  height: 220px;
+  overflow-y: auto;
+  border-top: 1px solid rgb(192, 192, 192);
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.TodayWorkoutCardMiddleItem {
+  border-bottom: 1px solid rgb(206, 206, 208);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.TodayWorkoutCardMiddleItemImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.TodayWorkoutCardMiddleItemName {
+  margin-left: 10px;
+}
+
+.TodayWorkoutCardBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.TodayWorkoutCardBottom button {
+  background-color: rgb(239, 198, 120);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.TodayWorkoutCardBottom button:hover {
+  background-color: rgb(255, 165, 0); 
+  transform: scale(1.05); 
+}
+
+/* Countdown Timer */
+.CountdownTimer {
+  font-family: 'Nunito', sans-serif;
+  padding-top: 5px;
+}
+
+.CountdownTimer > p {
+  margin: 0;
+}
+
+/* Welcome Bar */
+.WelcomeBar {
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Add this line */
+  align-items: center;
+}
+
+.WelcomeBarTexts > h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+
+.WelcomeBarTexts > h3 {
+  font-family: 'Nunito', sans-serif;
+  margin-top: -10px;
+  font-size: 15px;
+}
+
+.WelcomeBarProfile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 50px;
+  border: 2px solid rgb(194, 191, 191);
+}
+
+.WelcomeBarProfileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Nav Bar */
+.NavBar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.navItem {
+  text-decoration: none;
+  color: #333; 
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navItem:hover, .navItem.active {
+  background-color: rgba(0,0,0,0.1); 
+}
+
+/* Weekly Streak */
+.WeeklyStreak {
+  margin-top: 17px;
+  width: 270px; /* Adjusted width to ensure enough space for circles */
+  height: 75px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the items vertically */
+}
+
+.WeeklyStreakTop {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.WeeklyStreakTop > h1 {
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+}
+
+.WeeklyStreakBottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.WeeklyStreakBottomItem,
+.WeeklyStreakBottomItemBad,
+.WeeklyStreakBottomItemMid,
+.WeeklyStreakBottomItemGood {
+  border-radius: 50%; /* Ensures circular shape */
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers content vertically */
+  margin: 0 5px; /* Adds horizontal space between circles */
+}
+
+.WeeklyStreakBottomItemBad {
+  border: 1px solid rgb(166, 243, 181);
+}
+
+.WeeklyStreakBottomItemMid {
+  border: 2px solid rgb(166, 243, 181);
+}
+
+.WeeklyStreakBottomItemGood {
+  border: 4px solid rgb(166, 243, 181);
 }
