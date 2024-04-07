@@ -7,7 +7,8 @@ import PastMidWorkoutList from './PastMidWorkoutList';
 import PastPoorWorkoutList from './PastPoorWorkoutList';
 import PastGoodWorkoutList from './PastGoodWorkoutList';
 import PastVeryGoodWorkoutList from './PastVeryGoodWorkoutList';
-import TodayWorkoutCarousel from './TodayWorkoutCarousel';
+import TodayWorkoutCarouselPre from './TodayWorkoutCarouselPre';
+import TodayWorkoutCarouselPost from './TodayWorkoutCarouselPost';
 
 
 function Workout() {
@@ -36,7 +37,7 @@ function Workout() {
                 <div className="MainContent">
                     <PastWorkoutTop date={formattedDate}/>
                     {workoutlistDisplay}
-                    <TodayWorkoutCarousel />
+                    <TodayWorkoutCarouselPre />
                 </div>
                 <NavBar />
             </div>

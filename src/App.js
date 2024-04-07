@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Page from './components/Page';
 import TopBar from './components/TopBar';
 import Workout from './components/Workout';
+import WorkoutP from './components/WorkoutP';
 import CalendarCard from './components/CalendarCard';
 import ExampleWorkout from './components/ExampleWorkout';
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/today" element={<Workout />} />
+        <Route path="/todayP" element={<WorkoutP />} />
         <Route path="/calendar" element={<CalendarCard />}/>
         <Route path="/example" element={<ExampleWorkout />}/>
       </Routes>

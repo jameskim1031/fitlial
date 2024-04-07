@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import VideoUploader from './VideoUploader';
+import PushUp from '../video/push_up.MOV'
+import { useNavigate } from 'react-router-dom';
 
 function TodayWorkoutList() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        console.log("clicking")
+        navigate('/todayP');
+    }
+
     return (
         <div className='TodayWorkoutList'>
             <div className='TodayWorkoutListItem'>
@@ -11,7 +20,7 @@ function TodayWorkoutList() {
                 <div className='TodayWorkoutListItemBottom'>
                     <div className='TodayWorkoutListItemBottomVideoContainer'>
                         <video width="80" height="60" controls>
-                            <source src="movie.mp4" type="video/mp4"></source>
+                            <source src={PushUp} type="video/mp4"></source>
                         </video>
                     </div>
                     <VideoUploader />
@@ -75,7 +84,7 @@ function TodayWorkoutList() {
                 </div>
             </div>
             <div className='TodayWorkoutListItemSubmit'>
-                <button className='TodayWorkoutListItemSubmitButton'>Submit</button>
+                <button onClick={handleClick} className='TodayWorkoutListItemSubmitButton'>Submit</button>
             </div>
         </div>
     );

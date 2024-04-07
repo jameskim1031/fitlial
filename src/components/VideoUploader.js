@@ -42,7 +42,7 @@ function VideoUploader() {
   // };
 
   return (
-    <div>
+    <div className = 'videoUploader'>
       {/* <input type="file" onChange={handleFileChange} style={{ display: 'none' }}/> */}
       <input type="file" onChange={handleFileChange}/>
       {/* <button onClick={handleUploadButtonClick} className='TodayWorkoutListItemBottomButton'>Upload</button> */}

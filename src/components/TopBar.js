@@ -37,10 +37,10 @@ function TopBar() {
             <div className='TopBarUserCompleted'>
                 <img className='TopBarUserImage' src={MomPicture}/>
             </div>
-            <div className='TopBarUserCompleted'>
+            <div className='TopBarUserIncompleted'>
                 <img className='TopBarUserImage' src={SonPicture}/>
             </div>
-            <div onClick={handleOnClickBro} className='TopBarUserIncompleted'>
+            <div className='TopBarUserCompleted'>
                 <img className='TopBarUserImage' src={BrotherPicture}/>
             </div>
         </div>
