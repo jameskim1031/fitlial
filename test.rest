@@ -1,0 +1,30 @@
+### Add User Endpoint ###
+
+# POST request to add a user
+POST http://localhost:3000/addUser
+Content-Type: application/json
+
+{
+  "username": "JohnDoe"
+}
+
+### Add Todo Endpoint ###
+
+# POST request to add a todo for a user
+POST http://localhost:3000/addTodo/VnXTO5y2nC8oVURIYA4u# Replace 'user123' with a valid user ID
+Content-Type: application/json
+
+{
+  "todo": "watch football" 
+}
+
+### Delete Todo Endpoint ###
+
+# DELETE request to delete a todo for a user
+DELETE http://localhost:3000/deleteTodo/VnXTO5y2nC8oVURIYA4u/rV1NGQXnPZCg3LbAEfJi# Replace 'user123' and 'todo456' with valid user ID and todo ID
+
+
+### Get Todos Endpoint ###
+
+# GET request to retrieve all todos for a user
+GET http://localhost:3000/getTodos/VnXTO5y2nC8oVURIYA4u# Replace 'user123' with a valid user ID
