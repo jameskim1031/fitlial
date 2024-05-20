@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { auth, db, doc, getDoc } from './firebase';
+import { auth, db, doc, getDoc } from '../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function UserProfile() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      if (auth.currentUser) {
-        const docRef = doc(db, "users", auth.currentUser.uid);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -15,11 +16,14 @@ function UserProfile() {
         } else {
           console.log("No such document!");
         }
+      } else {
+        setUserData(null); // Clear user data when user logs out
       }
-    };
+    });
 
-    fetchUserData();
-  }, [auth.currentUser]);
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div>
