@@ -11,7 +11,7 @@ import { collection, doc, getDocs, getDoc } from 'firebase/firestore';
 
 function Main() {
 
-    const userId = 2;
+    const userId = 3;
     const [user, setUser] = useState({});
     const [userFamilyData, setuserFamilyData] = useState([]);
 
