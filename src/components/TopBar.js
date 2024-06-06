@@ -8,9 +8,6 @@ import BrotherPicture from '../images/brother.jpeg';
 function TopBar({userFamily}) {
 
     const familyMembers = userFamily;
-    if (familyMembers) {
-        console.log(familyMembers);
-    }
 
     const ToastDad = ({ message }) => (
         <div className={`toastNotification ${showToastDad ? 'show' : ''}`}>{message}</div>
@@ -37,7 +34,7 @@ function TopBar({userFamily}) {
       <div className='TopBar'>
         <div className='TopBarInner'>
             {familyMembers ? familyMembers.map((member)=>(
-                <div className='TopBarUserCompleted'>
+                <div key={member.id} className='TopBarUserCompleted'>
                     <img className='TopBarUserImage' src={member.imageURL}/>
                 </div>
             )) : null}

@@ -14,6 +14,8 @@ function Main() {
     const userId = 3;
     const [user, setUser] = useState({});
     const [userFamilyData, setuserFamilyData] = useState([]);
+    const [workoutsList, setWorkoutsList] = useState([]);
+
 
     useEffect(()=>{
         async function fetchUserData() {
@@ -30,15 +32,24 @@ function Main() {
 
                 if (fetchedUser && fetchedUser.familyMembers) {
                     const familyMembersRefs = fetchedUser.familyMembers;
-                    console.log(familyMembersRefs);
                     const familyMembersPromises = familyMembersRefs.map(refPath => {
                         const ref = doc(db, refPath);
                         return getDoc(ref);
                     });
                     const familyMembersSnapshots = await Promise.all(familyMembersPromises);
                     const familyMembersData = familyMembersSnapshots.map(familyDoc => ({ id: familyDoc.id, ...familyDoc.data() }));
-                    console.log(familyMembersData);
                     setuserFamilyData(familyMembersData);
+                }
+
+                if (fetchedUser && fetchedUser.workouts) {
+                    const workoutsRefs = fetchedUser.workouts;
+                    const workoutsRefsPromises = workoutsRefs.map(refPath => {
+                        const ref = doc(db, refPath);
+                        return getDoc(ref);
+                    });
+                    const workoutsSnapshots = await Promise.all(workoutsRefsPromises);
+                    const workoutsData = workoutsSnapshots.map(workoutsDoc => ({id: workoutsDoc.id, ...workoutsDoc.data()}));
+                    setWorkoutsList(workoutsData);
                 }
 
             }
@@ -48,7 +59,6 @@ function Main() {
         }   
         fetchUserData();     
     },[])
-
 
     if (!user) {
         return <div>Loading</div>;  // Handle the case where user data is not found
@@ -60,7 +70,7 @@ function Main() {
                 <div className="MainContent">
                     <WelcomeBar user={user}/>
                     <TopBar user={user} userFamily={userFamilyData}/>
-                    <TodayWorkout />
+                    <TodayWorkout workouts={workoutsList}/>
                     <WeeklyStreak />
                 </div>
                 <NavBar />
