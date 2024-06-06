@@ -1,8 +1,8 @@
 NOTE: The web-app is still largely a prototype! Many of the features are to be implemented.
 
 To do to run:
-npm install
-npm start
+1. npm install
+2. npm start
 
 Things you could try:
 1. Click between Home, Calendar, Today tabs (Profile is to be completed)
