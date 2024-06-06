@@ -9,7 +9,6 @@ import WorkoutP from './components/WorkoutP';
 import CalendarCard from './components/CalendarCard';
 import ExampleWorkout from './components/ExampleWorkout';
 // import Profile from './components/UserProfile';
-import UserAuth from './components/auth';
 
 function App() {
   return (
@@ -20,8 +19,6 @@ function App() {
         <Route path="/todayP" element={<WorkoutP />} />
         <Route path="/calendar" element={<CalendarCard />}/>
         {/* <Route path="/profile" element={<Profile />}/> */}
-        <Route path="/UserAuth" element={<UserAuth />}/>
-        <Route path="/example" element={<ExampleWorkout />}/>
       </Routes>
     </BrowserRouter>
   );

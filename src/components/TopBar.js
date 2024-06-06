@@ -5,7 +5,12 @@ import SonPicture from '../images/son.jpeg';
 import BrotherPicture from '../images/brother.jpeg';
 
 
-function TopBar() {
+function TopBar({userFamily}) {
+
+    const familyMembers = userFamily;
+    if (familyMembers) {
+        console.log(familyMembers);
+    }
 
     const ToastDad = ({ message }) => (
         <div className={`toastNotification ${showToastDad ? 'show' : ''}`}>{message}</div>
@@ -31,7 +36,23 @@ function TopBar() {
     return (
       <div className='TopBar'>
         <div className='TopBarInner'>
-            <div onClick={handleOnClickDad} className='TopBarUserIncompleted'>
+            {familyMembers ? familyMembers.map((member)=>(
+                <div className='TopBarUserCompleted'>
+                    <img className='TopBarUserImage' src={member.imageURL}/>
+                </div>
+            )) : null}
+            
+        </div>
+        {setShowToastDad && <ToastDad message="Dad Nudged" />}
+        {setShowToastBro && <ToastBro message="Brother Nudged" />}
+      </div>
+    );
+  }
+  
+  export default TopBar;
+  
+
+  {/* <div onClick={handleOnClickDad} className='TopBarUserIncompleted'>
                 <img className='TopBarUserImage' src={DadPicture}/>
             </div>
             <div className='TopBarUserCompleted'>
@@ -42,13 +63,4 @@ function TopBar() {
             </div>
             <div className='TopBarUserCompleted'>
                 <img className='TopBarUserImage' src={BrotherPicture}/>
-            </div>
-        </div>
-        {setShowToastDad && <ToastDad message="Dad Nudged" />}
-        {setShowToastBro && <ToastBro message="Brother Nudged" />}
-      </div>
-    );
-  }
-  
-  export default TopBar;
-  
+            </div> */}
